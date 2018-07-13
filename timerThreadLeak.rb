@@ -5,9 +5,9 @@ require 'objspace'
 
 ObjectSpace.trace_object_allocations_start
 
-task = Concurrent::TimerTask.new(execution_interval: 2, timeout_interval: 1) do
+task = Concurrent::TimerTask.new(execution_interval: 1, timeout_interval: 0.5) do
   puts "Going to Sleep #{Time.now}"
-  sleep 6
+  sleep 20
 end
 
 task.execute
